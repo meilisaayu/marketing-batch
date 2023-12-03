@@ -41,9 +41,7 @@ def fetch_supabase_data_in_batches(**kwargs):
     response = supabase.table('YOUR_SUPABASE_TABLE_NAME').select("*").execute() #my table name is 'marketing'
 
     print(response.data)
-    #print(response.data[0].get('id'))
-    #data = response.get('data', [])
-
+    
     # Convert the data to JSON format
     json_data = json.dumps(response.data)
     df = pd.read_json(json_data)
@@ -116,10 +114,10 @@ load_csv = GCSToBigQueryOperator(
     bucket=bucket_name,
     source_objects=['output_*.csv'],
     destination_project_dataset_table=f"{DATASET_NAME}.{TABLE_NAME}",
-    source_format='CSV',  # Specify the source format
-    autodetect=True,  # Enable schema autodetection
-    create_disposition='CREATE_IF_NEEDED',  # Specify the create disposition
-    skip_leading_rows=1,  # Skip the header row
+    source_format='CSV',
+    autodetect=True,
+    create_disposition='CREATE_IF_NEEDED', 
+    skip_leading_rows=1, 
     write_disposition='WRITE_TRUNCATE',
     dag=dag,
 )
