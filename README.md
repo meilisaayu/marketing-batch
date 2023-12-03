@@ -52,6 +52,7 @@ predictive model.
 
 
 ## Project Architecture
-![image](https://github.com/meilisaayu/marketing-batch/assets/64299327/57c5bc2c-c2af-4b76-8fbe-0d89292cc33a)
+![image](https://github.com/meilisaayu/marketing-batch/assets/64299327/0456c6af-ea07-43f5-8475-c2d928fc0310)
+
 
 
